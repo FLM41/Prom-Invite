@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yunaa's Prom Invite 2026</title>
+    <style>
+        :root {
+            --primary-purple: #7c4dff;
+            --primary-purple-glow: rgba(124, 77, 255, 0.5);
+            --baby-blue: #00d2ff;
+            --baby-blue-glow: rgba(0, 210, 255, 0.5);
+            /* Internal Card Color */
+            --card-base: linear-gradient(135deg, rgba(161, 140, 209, 0.4) 0%, rgba(251, 194, 235, 0.4) 50%, rgba(132, 250, 176, 0.4) 100%);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 50%, #84fab0 100%);
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #333;
+        }
+
+        /* Twinkling Stars Background (Outer) */
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: twinkle 4s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.4); }
+        }
+
+        /* Main Card Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(0.5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .card {
+            /* Now using a translucent gradient base, not just white */
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            padding: 40px;
+            border-radius: 35px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2), inset 0 0 30px rgba(255, 255, 255, 0.2);
+            text-align: center;
+            max-width: 480px;
+            width: 85%;
+            max-height: 90vh;
+            overflow-y: auto;
+            z-index: 10;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            animation: float 8s ease-in-out infinite;
+            position: relative; /* For internal stars */
+        }
+
+        /* Internal Stars effect */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 30% 20%, var(--primary-purple-glow), transparent 25%),
+                        radial-gradient(circle at 70% 80%, var(--baby-blue-glow), transparent 25%);
+            opacity: 0.3;
+            border-radius: 35px;
+            z-index: -1;
+        }
+
+        h1 { 
+            background: linear-gradient(to right, var(--primary-purple), var(--baby-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        h2 { color: #555; font-size: 1rem; font-weight: 400; margin-top: 0; text-transform: uppercase; letter-spacing: 2px; }
+        
+        .edition-badge {
+            display: inline-block;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+            box-shadow: 0 5px 10px rgba(106, 17, 203, 0.2);
+        }
+
+        .intro-text { 
+            font-size: 0.95rem; 
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 25px;
+        }
+
+        .section {
+            /* Text blocks are now internal glassmorphism, blending the colors through */
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            margin: 18px 0;
+            padding: 22px;
+            border-radius: 20px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .section:hover { 
+            transform: scale(1.03); 
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .details-title { 
+            font-weight: bold; 
+            color: #512da8; /* Deepening the purple for contrast */
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .fit-check-warning {
+            background: rgba(255, 205, 210, 0.4);
+            color: #b71c1c;
+            padding: 15px;
+            border-radius: 18px;
+            font-size: 0.85rem;
+            border: 1px dashed rgba(239, 154, 154, 0.6);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        #acceptBtn {
+            background: linear-gradient(45deg, var(--primary-purple), var(--baby-blue));
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(124, 77, 255, 0.4);
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        #acceptBtn:hover { 
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 18px 30px rgba(124, 77, 255, 0.5);
+            filter: brightness(1.1);
+        }
+
+        #revealArea { display: none; margin-top: 30px; animation: popIn 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.7) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0px); }
+        }
+
+        .cute-msg { 
+            color: #311b92; 
+            font-weight: 500; 
+            background: rgba(255, 255, 255, 0.5);
+            padding: 25px; 
+            border-radius: 25px;
+            border: 1px solid rgba(225, 190, 231, 0.5);
+            line-height: 1.7;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="stars"></div>
+
+    <div class="card">
+        <div class="edition-badge">Royal's of 2026 Edition</div>
+        <h1>✨ YOU’RE INVITED, YUNAA! ✨</h1>
+        <h2>Virtual Prom Night</h2>
+
+        <p class="intro-text">Hey Yunaa! Since we’re making history with the first-ever virtual gala, you’re officially on the VIP list. No limo required just a solid Wi-Fi connection.</p>
+
+        <div class="section">
+            <span class="details-title">📅 THE DETAILS</span>
+            <div style="padding-left: 5px; color: #444;">
+                <strong>DATE:</strong> Saturday, March 7th, 2026<br>
+                <strong>TIME:</strong> Whenever you’re free (Lobby open 24/7!)<br>
+                <strong>LOCATION:</strong> The Digital Ballroom (Discord DMs 💬)
+            </div>
+        </div>
+
+        <div class="section">
+            <span class="details-title">👗 DRESS CODE: "You Do You"</span>
+            <div style="padding-left: 5px; color: #444;">
+                Whether it’s just a simple outfit or your favorite oversized hoodie, wear whatever makes you feel like a 10/10 (which you already are).
+            </div>
+        </div>
+
+        <p class="fit-check-warning">
+            <strong>⚠️ FIT CHECK MANDATORY:</strong><br>
+            Lay your clothes on the bed or show however you're comfortable! Just gotta see the vibe!
+        </p>
+
+        <button id="acceptBtn" onclick="reveal()">Accept Invitation</button>
+
+        <div id="revealArea">
+            <div class="cute-msg">
+                <strong>Yayy! 🎉</strong><br>
+                Virtual Prom 2026 wouldn't be the same without you. Can't wait to see your "fit" and hang out! 🌸✨
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Generate Outer Stars
+        const container = document.getElementById('stars');
+        for (let i = 0; i < 70; i++) {
+            createStar(container);
+        }
+
+        // Generate Internal Stars (Inside the Card)
+        const cardContainer = document.querySelector('.card');
+        for (let i = 0; i < 25; i++) {
+            createInternalStar(cardContainer);
+        }
+
+        function createStar(parent) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 1.5;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.animationDelay = Math.random() * 5 + 's';
+            parent.appendChild(star);
+        }
+
+        function createInternalStar(parent) {
+            // Internal stars are smaller and subtler
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.opacity = '0.15';
+            star.style.background = 'white';
+            const size = Math.random() * 2 + 1;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 5 + 's';
+            star.style.animationDuration = (Math.random() * 3 + 3) + 's'; // Varied speeds
+            parent.appendChild(star);
+        }
+
+        function reveal() {
+            document.getElementById('revealArea').style.display = 'block';
+            document.getElementById('acceptBtn').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
